@@ -3,7 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="Test_for_softteco.app" target="11" />
-      <module name="Test_for_softteco.data" target="1.8" />
+      <module name="Test_for_softteco.data" target="11" />
+      <module name="Test_for_softteco.data_1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

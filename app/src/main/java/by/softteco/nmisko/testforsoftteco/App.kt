@@ -1,8 +1,7 @@
 package by.softteco.nmisko.testforsoftteco
 
 import android.app.Application
-import android.util.Log
-import by.softteco.nmisko.core.data.remote.api.RemoteApi
+import by.softteco.nmisko.data.remote.api.RemoteApi
 import javax.inject.Inject
 
 class App : Application() {
