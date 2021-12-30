@@ -1,7 +1,9 @@
 package by.softteco.nmisko.domain.repository
 
-interface UserRepository() {
-    fun getUserByID(id : Int)
+import by.softteco.nmisko.domain.model.User
 
-    fun saveUser
+interface UserRepository {
+    suspend fun getUserByID(id : Int) : User
+
+    suspend fun saveUser(user : User)
 }

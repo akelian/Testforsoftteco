@@ -1,4 +1,4 @@
-package by.softteco.nmisko.data.entity.user
+package by.softteco.nmisko.data.model.user
 
 
 import com.google.gson.annotations.SerializedName

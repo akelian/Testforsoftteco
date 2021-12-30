@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "post_table")
-data class Post(
+data class PostLocal(
     @ColumnInfo(name = "body")
     val body: String,
     @PrimaryKey

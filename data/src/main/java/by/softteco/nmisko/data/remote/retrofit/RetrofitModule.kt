@@ -40,6 +40,6 @@ class RetrofitModule {
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
-        return retrofit.create()
+        return retrofit.create(RemoteApi::class.java)
     }
 }

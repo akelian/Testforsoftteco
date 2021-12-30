@@ -1,13 +1,9 @@
-package by.softteco.nmisko.data.entity.user
+package by.softteco.nmisko.data.model.user
 
 
 import com.google.gson.annotations.SerializedName
 
-data class User(
-    @SerializedName("address")
-    val address: Address,
-    @SerializedName("company")
-    val company: Company,
+data class UserItem(
     @SerializedName("email")
     val email: String,
     @SerializedName("id")
@@ -19,5 +15,7 @@ data class User(
     @SerializedName("username")
     val username: String,
     @SerializedName("website")
-    val website: String
+    val website: String,
+    @SerializedName("geo")
+    val geo: Geo
 )

@@ -14,7 +14,6 @@ class App : Application() {
         super.onCreate()
         val app = applicationContext as App
         retrofit = app.getComponent().getRetrofit()
-    /*app.getComponent().getRetrofit().also { Log.e("STARTUP", "retrofit initialized") }*/
 
     }
 

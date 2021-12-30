@@ -1,9 +1,9 @@
-package by.softteco.nmisko.data.entity.post
+package by.softteco.nmisko.data.model.post
 
 import com.google.gson.annotations.SerializedName
 
 
-data class Post(
+data class PostItem(
     @SerializedName("body")
     val body: String,
     @SerializedName("id")
