@@ -8,12 +8,10 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class AndroidModule {
+abstract class AndroidModule {
 
-//    @Provides
-//    fun bindContext(application: Application): Context{
-//        return application
-//    }
+    @Binds
+    abstract fun bindContext(app: Application) : Context
 
 
 }

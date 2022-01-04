@@ -15,7 +15,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class, /*AndroidModule::class, */RoomDatabaseModule::class])
+@Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class, AndroidModule::class, RoomDatabaseModule::class])
 interface ApplicationComponent : AndroidInjector<App> {
 
     @Component.Builder

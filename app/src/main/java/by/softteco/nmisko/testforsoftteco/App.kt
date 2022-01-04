@@ -18,10 +18,6 @@ class App : Application() {
         val app = applicationContext as App
         retrofit = app.getComponent().getRetrofit()
 
-        @Provides
-        fun bindContext(app: Application): Context{
-            return app
-        }
 
     }
 
