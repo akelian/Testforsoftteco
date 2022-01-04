@@ -13,7 +13,7 @@ interface RemoteApi {
     suspend fun getAllUsers() : Response<UserResponse>
 
     @GET("/users/{userId}")
-    suspend fun getAllUsersById(@Path("userId")userId: String) : Response<UserItem>
+    suspend fun getUsersById(@Path("userId")userId: String) : Response<UserItem>
 
     @GET("/posts")
     suspend fun getPostList(): Response<PostResponse>

@@ -1,7 +1,10 @@
 package by.softteco.nmisko.testforsoftteco
 
 import android.app.Application
+import android.content.Context
 import by.softteco.nmisko.data.remote.api.RemoteApi
+import dagger.Binds
+import dagger.Provides
 import javax.inject.Inject
 
 class App : Application() {
@@ -15,11 +18,18 @@ class App : Application() {
         val app = applicationContext as App
         retrofit = app.getComponent().getRetrofit()
 
+        @Provides
+        fun bindContext(app: Application): Context{
+            return app
+        }
+
     }
+
 
     private fun getComponent(): ApplicationComponent{
         applicationComponent = DaggerApplicationComponent.builder().application(this).build()
 
         return applicationComponent
     }
+
 }

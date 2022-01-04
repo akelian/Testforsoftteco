@@ -1,4 +1,4 @@
-package by.softteco.nmisko.data.remote.retrofit
+package by.softteco.nmisko.data.di
 
 import by.softteco.nmisko.data.AppContracts
 import by.softteco.nmisko.data.remote.CurlLoggingInterceptor
@@ -10,7 +10,6 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Named
 
 import javax.inject.Singleton

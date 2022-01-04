@@ -6,10 +6,6 @@ import androidx.room.PrimaryKey
 
 
 data class UserLocal(
-
-    @ColumnInfo(name = "dbId")
-    @PrimaryKey(autoGenerate = true)
-    val dbId : Int,
     @ColumnInfo(name = "email")
     val email: String,
     @ColumnInfo(name = "id")
