@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class UserLocal(
     @ColumnInfo(name = "email")
     val email: String,
+    @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Int,
     @ColumnInfo(name = "name")
@@ -17,5 +18,10 @@ data class UserLocal(
     @ColumnInfo(name = "username")
     val username: String,
     @ColumnInfo(name = "website")
-    val website: String
+    val website: String,
+    @ColumnInfo(name = "geoLat")
+    val geoLat: String,
+    @ColumnInfo(name = "geoLng")
+    val geoLng: String
+
 )

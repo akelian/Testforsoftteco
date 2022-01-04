@@ -1,9 +1,9 @@
-package by.softteco.nmisko.data.model.user
+package by.softteco.nmisko.data.remote.model.user
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Geo(
+data class GeoItem(
     @SerializedName("lat")
     val lat: String,
     @SerializedName("lng")

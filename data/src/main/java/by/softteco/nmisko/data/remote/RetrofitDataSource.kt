@@ -1,7 +1,7 @@
 package by.softteco.nmisko.data.remote
 
 import by.softteco.nmisko.data.RemoteDataSource
-import by.softteco.nmisko.data.model.user.UserItem
+import by.softteco.nmisko.data.remote.model.user.UserItem
 import by.softteco.nmisko.data.remote.api.RemoteApi
 import retrofit2.Response
 

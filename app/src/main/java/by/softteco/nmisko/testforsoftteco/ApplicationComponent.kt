@@ -35,6 +35,6 @@ interface ApplicationComponent : AndroidInjector<App> {
     fun inject(activity: MainActivity)
     fun inject(fragment: MenuFragment)
     fun inject(fragment: UserDetailsFragment)
-    fun inject(userRepository: UserRepositoryImpl)
+
 }
 

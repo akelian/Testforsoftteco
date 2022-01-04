@@ -11,7 +11,6 @@ import javax.inject.Singleton
 
 @Module
  class RoomDatabaseModule {
-    @Inject lateinit var bindContext: Context
 
     @Provides
     @Singleton

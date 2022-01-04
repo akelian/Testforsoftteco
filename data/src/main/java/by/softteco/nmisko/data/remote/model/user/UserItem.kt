@@ -1,4 +1,4 @@
-package by.softteco.nmisko.data.model.user
+package by.softteco.nmisko.data.remote.model.user
 
 
 import com.google.gson.annotations.SerializedName
@@ -17,5 +17,5 @@ data class UserItem(
     @SerializedName("website")
     val website: String,
     @SerializedName("geo")
-    val geo: Geo
+    val geo: GeoItem
 )

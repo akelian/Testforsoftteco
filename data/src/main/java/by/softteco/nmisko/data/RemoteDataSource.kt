@@ -1,6 +1,6 @@
 package by.softteco.nmisko.data
 
-import by.softteco.nmisko.data.model.user.UserItem
+import by.softteco.nmisko.data.remote.model.user.UserItem
 import by.softteco.nmisko.data.remote.PostResponse
 import retrofit2.Response
 

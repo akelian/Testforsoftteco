@@ -1,4 +1,4 @@
-package by.softteco.nmisko.data.model.post
+package by.softteco.nmisko.data.remote.model.post
 
 import com.google.gson.annotations.SerializedName
 

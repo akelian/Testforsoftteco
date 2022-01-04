@@ -2,7 +2,7 @@ package by.softteco.nmisko.data.remote.api
 
 import by.softteco.nmisko.data.remote.PostResponse
 import by.softteco.nmisko.data.remote.UserResponse
-import by.softteco.nmisko.data.model.user.UserItem
+import by.softteco.nmisko.data.remote.model.user.UserItem
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
