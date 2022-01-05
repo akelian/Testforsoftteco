@@ -29,8 +29,6 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nextBtn.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_menuFragment2_to_userDetailsFragment)
         }
-    }
+
 }

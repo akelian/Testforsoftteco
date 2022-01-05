@@ -1,12 +1,13 @@
-package by.softteco.nmisko.testforsoftteco
+package by.softteco.nmisko.testforsoftteco.di
 
 import android.app.Application
 import by.softteco.nmisko.data.di.RetrofitModule
 import by.softteco.nmisko.data.di.RoomDatabaseModule
 import by.softteco.nmisko.data.remote.api.RemoteApi
-import by.softteco.nmisko.data.repository.UserRepositoryImpl
-import by.softteco.nmisko.testforsoftteco.ui.MainActivity
+import by.softteco.nmisko.testforsoftteco.App
+import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
 import by.softteco.nmisko.testforsoftteco.ui.fragment.MenuFragment
+import by.softteco.nmisko.testforsoftteco.ui.fragment.UserDetailsFragment
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

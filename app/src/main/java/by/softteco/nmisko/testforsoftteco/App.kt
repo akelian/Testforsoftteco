@@ -1,14 +1,13 @@
 package by.softteco.nmisko.testforsoftteco
 
 import android.app.Application
-import android.content.Context
 import by.softteco.nmisko.data.remote.api.RemoteApi
-import dagger.Binds
-import dagger.Provides
+import by.softteco.nmisko.testforsoftteco.di.ApplicationComponent
+import by.softteco.nmisko.testforsoftteco.di.DaggerApplicationComponent
 import javax.inject.Inject
 
 class App : Application() {
-    private lateinit var applicationComponent :ApplicationComponent
+    private lateinit var applicationComponent : ApplicationComponent
 
     @Inject
     lateinit var retrofit : RemoteApi
@@ -22,7 +21,7 @@ class App : Application() {
     }
 
 
-    private fun getComponent(): ApplicationComponent{
+    private fun getComponent(): ApplicationComponent {
         applicationComponent = DaggerApplicationComponent.builder().application(this).build()
 
         return applicationComponent

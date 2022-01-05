@@ -1,4 +1,4 @@
-package by.softteco.nmisko.testforsoftteco
+package by.softteco.nmisko.testforsoftteco.di
 
 import android.app.Application
 import android.content.Context

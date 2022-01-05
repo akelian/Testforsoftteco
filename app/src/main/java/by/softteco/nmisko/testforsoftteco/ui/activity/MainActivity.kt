@@ -1,4 +1,4 @@
-package by.softteco.nmisko.testforsoftteco.ui
+package by.softteco.nmisko.testforsoftteco.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
