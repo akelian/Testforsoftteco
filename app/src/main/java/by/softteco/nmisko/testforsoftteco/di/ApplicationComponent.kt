@@ -1,8 +1,11 @@
 package by.softteco.nmisko.testforsoftteco.di
 
 import android.app.Application
+import by.softteco.nmisko.data.di.PostRepositoryModule
 import by.softteco.nmisko.data.di.RetrofitModule
 import by.softteco.nmisko.data.di.RoomDatabaseModule
+import by.softteco.nmisko.data.di.UserRepositoryModule
+import by.softteco.nmisko.data.local.RoomLocalDatabase
 import by.softteco.nmisko.data.remote.api.RemoteApi
 import by.softteco.nmisko.testforsoftteco.App
 import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
@@ -16,7 +19,8 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class, AndroidModule::class, RoomDatabaseModule::class])
+@Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class,
+    AndroidModule::class, RoomDatabaseModule::class, PostRepositoryModule::class, UserRepositoryModule::class])
 interface ApplicationComponent : AndroidInjector<App> {
 
     @Component.Builder
@@ -32,6 +36,7 @@ interface ApplicationComponent : AndroidInjector<App> {
 
 
     fun getRetrofit(): RemoteApi
+    fun getLocalDatabase(): RoomLocalDatabase
 
     fun inject(activity: MainActivity)
     fun inject(fragment: MenuFragment)

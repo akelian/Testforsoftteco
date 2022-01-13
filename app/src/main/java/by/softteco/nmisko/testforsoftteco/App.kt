@@ -1,6 +1,7 @@
 package by.softteco.nmisko.testforsoftteco
 
 import android.app.Application
+import by.softteco.nmisko.data.local.RoomLocalDatabase
 import by.softteco.nmisko.data.remote.api.RemoteApi
 import by.softteco.nmisko.testforsoftteco.di.ApplicationComponent
 import by.softteco.nmisko.testforsoftteco.di.DaggerApplicationComponent
@@ -11,13 +12,14 @@ class App : Application() {
 
     @Inject
     lateinit var retrofit : RemoteApi
+    @Inject
+    lateinit var localDatabase: RoomLocalDatabase
 
     override fun onCreate() {
         super.onCreate()
         val app = applicationContext as App
         retrofit = app.getComponent().getRetrofit()
-
-
+        localDatabase = app.getComponent().getLocalDatabase()
     }
 
 
