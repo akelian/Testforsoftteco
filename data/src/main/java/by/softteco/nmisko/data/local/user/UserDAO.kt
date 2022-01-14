@@ -12,9 +12,9 @@ interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(user: UserLocal)
 
-    @Query("SELECT * FROM post_table")
-    suspend fun getAllUsers() : Flow<UserLocal>
-    @Query("SELECT * FROM post_table")
-    suspend fun getUserById() : Flow<UserLocal>
+    @Query("SELECT * FROM user_table")
+    suspend fun getAllUsers() : List<UserLocal>
+    @Query("SELECT * FROM user_table")
+    suspend fun getUserById() : List<UserLocal>
 
 }

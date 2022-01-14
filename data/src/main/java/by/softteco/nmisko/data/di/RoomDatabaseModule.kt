@@ -6,7 +6,6 @@ import androidx.room.Room
 import by.softteco.nmisko.data.local.RoomLocalDatabase
 import dagger.Module
 import dagger.Provides
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Module
@@ -14,8 +13,8 @@ import javax.inject.Singleton
 
     @Provides
     @Singleton
-    fun provideLocalDatabase(bindContext: Context) =
-        Room.databaseBuilder(bindContext, RoomLocalDatabase::class.java, "database").build()
+    fun provideLocalDatabase(context: Context) : RoomLocalDatabase =
+        Room.databaseBuilder(context, RoomLocalDatabase::class.java, "database").build()
 
 
 }

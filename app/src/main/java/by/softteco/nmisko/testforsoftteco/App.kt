@@ -15,15 +15,15 @@ class App : Application() {
     @Inject
     lateinit var localDatabase: RoomLocalDatabase
 
+
     override fun onCreate() {
         super.onCreate()
         val app = applicationContext as App
-        retrofit = app.getComponent().getRetrofit()
-        localDatabase = app.getComponent().getLocalDatabase()
+
     }
 
 
-    private fun getComponent(): ApplicationComponent {
+     fun getComponent(): ApplicationComponent {
         applicationComponent = DaggerApplicationComponent.builder().application(this).build()
 
         return applicationComponent

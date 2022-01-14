@@ -13,6 +13,6 @@ interface PostDAO {
     suspend fun insertPost(post: PostLocal)
 
     @Query("SELECT * FROM post_table")
-    suspend fun getAllPosts() : Flow<PostLocal>
+    suspend fun getAllPosts() : List<PostLocal>
 
 }

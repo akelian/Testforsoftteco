@@ -2,9 +2,10 @@ package by.softteco.nmisko.data.local.user
 
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+@Entity(tableName = "user_table")
 data class UserLocal(
     @ColumnInfo(name = "email")
     val email: String,

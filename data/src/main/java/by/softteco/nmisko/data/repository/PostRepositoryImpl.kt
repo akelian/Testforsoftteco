@@ -9,13 +9,16 @@ import by.softteco.nmisko.domain.repository.PostRepository
 import retrofit2.Response
 import javax.inject.Inject
 
-class PostRepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDataSource, localDataSource: LocalDataSource) : PostRepository {
+class PostRepositoryImpl @Inject constructor(
+    private val remoteDataSource: RemoteDataSource,
+    localDataSource: LocalDataSource,
+) : PostRepository {
 
     override suspend fun getAllPosts(): ArrayList<Post> {
-        val response: Response<PostResponse> =  remoteDataSource.getPostList()
+        val response: Response<PostResponse> = remoteDataSource.getPostList()
         var postList = ArrayList<Post>()
-        if (response.isSuccessful){
-            val postResponse : PostResponse? = response.body()
+        if (response.isSuccessful) {
+            val postResponse: PostResponse? = response.body()
             postList = postResponse!!.mapToDomainModel()
 
         }

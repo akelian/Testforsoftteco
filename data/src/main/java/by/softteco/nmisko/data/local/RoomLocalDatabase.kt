@@ -10,6 +10,6 @@ import by.softteco.nmisko.data.local.user.UserLocal
 @Database(entities = [PostLocal::class, UserLocal::class], version = 1)
 abstract class RoomLocalDatabase : RoomDatabase() {
     abstract fun getPostDAO() : PostDAO
-    abstract fun getUserDao() : UserDAO
+    abstract fun getUserDAO() : UserDAO
 
 }

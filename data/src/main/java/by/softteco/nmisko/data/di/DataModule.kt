@@ -6,9 +6,6 @@ import by.softteco.nmisko.data.local.RoomDataSource
 import by.softteco.nmisko.data.local.RoomLocalDatabase
 import by.softteco.nmisko.data.remote.RetrofitDataSource
 import by.softteco.nmisko.data.remote.api.RemoteApi
-import by.softteco.nmisko.data.repository.PostRepositoryImpl
-import by.softteco.nmisko.domain.repository.PostRepository
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -19,7 +16,7 @@ class DataModule {
     @Provides
     @Singleton
     fun provideLocalDataSource(roomLocalDatabase: RoomLocalDatabase): LocalDataSource =
-        RoomDataSource(roomLocalDatabase.getPostDAO(), roomLocalDatabase.getUserDao())
+        RoomDataSource(roomLocalDatabase.getPostDAO(), roomLocalDatabase.getUserDAO())
 
     @Provides
     @Singleton

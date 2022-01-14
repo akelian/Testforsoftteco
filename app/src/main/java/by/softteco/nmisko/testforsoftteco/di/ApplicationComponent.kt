@@ -11,6 +11,7 @@ import by.softteco.nmisko.testforsoftteco.App
 import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
 import by.softteco.nmisko.testforsoftteco.ui.fragment.MenuFragment
 import by.softteco.nmisko.testforsoftteco.ui.fragment.UserDetailsFragment
+import by.softteco.nmisko.testforsoftteco.ui.viewmodel.MainViewModel
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -34,13 +35,13 @@ interface ApplicationComponent : AndroidInjector<App> {
 
     }
 
-
     fun getRetrofit(): RemoteApi
     fun getLocalDatabase(): RoomLocalDatabase
 
     fun inject(activity: MainActivity)
     fun inject(fragment: MenuFragment)
     fun inject(fragment: UserDetailsFragment)
+    fun inject(model: MainViewModel)
 
 }
 
