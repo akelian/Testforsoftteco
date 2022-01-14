@@ -1,12 +1,12 @@
 package by.softteco.nmisko.testforsoftteco.di
 
 import android.app.Application
-import by.softteco.nmisko.data.di.PostRepositoryModule
-import by.softteco.nmisko.data.di.RetrofitModule
-import by.softteco.nmisko.data.di.RoomDatabaseModule
-import by.softteco.nmisko.data.di.UserRepositoryModule
+import by.softteco.nmisko.data.di.*
 import by.softteco.nmisko.data.local.RoomLocalDatabase
 import by.softteco.nmisko.data.remote.api.RemoteApi
+import by.softteco.nmisko.domain.usecase.GetPostsUseCase
+import by.softteco.nmisko.domain.usecase.GetUserByIdUseCase
+import by.softteco.nmisko.domain.usecase.SaveUserInDBUseCase
 import by.softteco.nmisko.testforsoftteco.App
 import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
 import by.softteco.nmisko.testforsoftteco.ui.fragment.MenuFragment
@@ -21,7 +21,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class,
-    AndroidModule::class, RoomDatabaseModule::class, PostRepositoryModule::class, UserRepositoryModule::class])
+    AndroidModule::class, RoomDatabaseModule::class, PostRepositoryModule::class,
+    UserRepositoryModule::class, DataModule::class, UseCaseModule::class])
 interface ApplicationComponent : AndroidInjector<App> {
 
     @Component.Builder
@@ -37,6 +38,9 @@ interface ApplicationComponent : AndroidInjector<App> {
 
     fun getRetrofit(): RemoteApi
     fun getLocalDatabase(): RoomLocalDatabase
+    fun getPostsUseCase(): GetPostsUseCase
+    fun getUserByIDUseCase(): GetUserByIdUseCase
+    fun saveUserInDBUseCase(): SaveUserInDBUseCase
 
     fun inject(activity: MainActivity)
     fun inject(fragment: MenuFragment)

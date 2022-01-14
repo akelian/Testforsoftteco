@@ -1,8 +1,7 @@
 package by.softteco.nmisko.domain.usecase
 
-import by.softteco.nmisko.domain.repository.PostRepository
-import javax.inject.Inject
+import by.softteco.nmisko.domain.model.Post
 
-class GetPostsUseCase @Inject constructor(private val postRepository: PostRepository) {
-    suspend operator fun invoke() = postRepository.getAllPosts()
+interface GetPostsUseCase {
+    suspend operator fun invoke(): ArrayList<Post>
 }

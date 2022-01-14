@@ -39,7 +39,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        mainViewModel.fetchPosts()
+        mainViewModel.fetchPosts()
         setupUI()
     }
 
