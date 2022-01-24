@@ -10,6 +10,7 @@ import by.softteco.nmisko.domain.usecase.SaveUserInDBUseCase
 import by.softteco.nmisko.testforsoftteco.App
 import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
 import by.softteco.nmisko.testforsoftteco.ui.fragment.MenuFragment
+import by.softteco.nmisko.testforsoftteco.ui.fragment.PostItemFragment
 import by.softteco.nmisko.testforsoftteco.ui.fragment.UserDetailsFragment
 import by.softteco.nmisko.testforsoftteco.ui.viewmodel.MainViewModel
 import dagger.BindsInstance
@@ -22,7 +23,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [RetrofitModule::class, AndroidSupportInjectionModule::class,
     AndroidModule::class, RoomDatabaseModule::class, PostRepositoryModule::class,
-    UserRepositoryModule::class, DataModule::class, UseCaseModule::class])
+    UserRepositoryModule::class, DataModule::class, UseCaseModule::class, ViewModelModule::class])
 interface ApplicationComponent : AndroidInjector<App> {
 
     @Component.Builder
@@ -46,6 +47,7 @@ interface ApplicationComponent : AndroidInjector<App> {
     fun inject(fragment: MenuFragment)
     fun inject(fragment: UserDetailsFragment)
     fun inject(model: MainViewModel)
+    fun inject(fragment : PostItemFragment)
 
 }
 

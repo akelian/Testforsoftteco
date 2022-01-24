@@ -5,4 +5,4 @@ import androidx.annotation.Keep
 import by.softteco.nmisko.data.remote.model.post.PostItem
 
 @Keep
-class PostResponse(val posts : List<PostItem>)
+class PostResponse : ArrayList<PostItem>()

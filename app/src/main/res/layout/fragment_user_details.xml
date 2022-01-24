@@ -1,12 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/userDetailsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".ui.fragment.UserDetailsFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/teal_700"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+    <TextView
+        android:id="@+id/postId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/shape_list_item"
+        android:text="0"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        android:textColor="@color/lightGray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="username"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/postId"
+        app:layout_constraintTop_toTopOf="@+id/postId" />
+
+    <View
+        android:id="@+id/border1"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:background="@color/lightGray"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <TextView
+        android:id="@+id/userNickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="userNickName"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/border1"
+        app:layout_constraintStart_toStartOf="@+id/border1"
+        app:layout_constraintTop_toBottomOf="@id/border1"  />
+
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape_nav_item"
+        android:textSize="24sp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/placeholder_gmail_com"
+        app:layout_constraintStart_toStartOf="@id/postId"
+        app:layout_constraintTop_toBottomOf="@+id/postId" />
+
+    <TextView
+        android:id="@+id/userSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_nav_item"
+        android:textSize="24sp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/placeholder_gmail_com"
+        app:layout_constraintStart_toStartOf="@id/userEmail"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
+
+    <TextView
+        android:id="@+id/userPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_nav_item"
+        android:textSize="24sp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/placeholder_gmail_com"
+        app:layout_constraintStart_toStartOf="@id/userSite"
+        app:layout_constraintTop_toBottomOf="@+id/userSite" />
+
+    <TextView
+        android:id="@+id/userCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_nav_item"
+        android:textSize="24sp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/placeholder_gmail_com"
+        app:layout_constraintStart_toStartOf="@id/userPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/userPhoneNumber" />
+
+    <Button
+        android:id="@+id/saveUserInDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_nav_item"
+        android:text="Save"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/lightGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

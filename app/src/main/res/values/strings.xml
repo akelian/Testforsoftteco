@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="savelog">Save Log</string>
     <string name="title_placeholder">ea molestias quasi exercitationem repellat qui ipsa sit aut</string>
+    <string name="placeholder_gmail_com">placeholder@gmail.com</string>
 </resources>

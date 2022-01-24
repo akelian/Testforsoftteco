@@ -4,29 +4,35 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.softteco.nmisko.domain.model.Post
 import by.softteco.nmisko.domain.model.User
-import by.softteco.nmisko.data.usecase.GetPostsUseCaseImpl
-import kotlinx.coroutines.launch
+import by.softteco.nmisko.domain.usecase.GetPostsUseCase
+import by.softteco.nmisko.domain.usecase.GetUserByIdUseCase
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 
 
-class MainViewModel : ViewModel() {
+class MainViewModel @Inject constructor(var getPostsUseCase: GetPostsUseCase,var getUserByIdUseCase: GetUserByIdUseCase) : ViewModel() {
 
-     var postsList = ArrayList<Post>()
-     lateinit var user: User
+    private var postsList = ArrayList<Post>()
+    private lateinit var user: User
 
-     @Inject
-     lateinit var getPostsUseCaseImpl: GetPostsUseCaseImpl
+     suspend fun fetchPosts() {
+         withContext(viewModelScope.coroutineContext) {
+             postsList = getPostsUseCase()
+         }.also { Timber.e("Done") }
+    }
 
-
-    fun fetchPosts() {
-        viewModelScope.launch {
-            postsList = getPostsUseCaseImpl.invoke()
-            for (post in postsList) {
-                Timber.e(post.toString())
-            }
+    suspend fun fetchUserById(id :Int){
+        withContext(viewModelScope.coroutineContext){
+           user = getUserByIdUseCase(id)
         }
     }
 
+    fun getPosts(): ArrayList<Post> {
+        return postsList
+    }
 
+    fun getUser(): User {
+        return user
+    }
 }

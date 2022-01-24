@@ -2,15 +2,16 @@ package by.softteco.nmisko.data
 
 
 import by.softteco.nmisko.data.local.user.UserLocal
-import by.softteco.nmisko.data.remote.model.user.UserItem
 import by.softteco.nmisko.data.remote.PostResponse
+import by.softteco.nmisko.data.remote.model.post.PostItem
+import by.softteco.nmisko.data.remote.model.user.UserItem
 import by.softteco.nmisko.domain.model.Geo
 import by.softteco.nmisko.domain.model.Post
 import by.softteco.nmisko.domain.model.User
 
 fun PostResponse.mapToDomainModel(): ArrayList<Post> {
     val newPostList = ArrayList<Post>()
-    for (post in posts) {
+    for (post in this) {
         newPostList.add(
             Post(
                 id = post.id,
@@ -22,6 +23,14 @@ fun PostResponse.mapToDomainModel(): ArrayList<Post> {
     }
     return newPostList
 }
+
+fun PostItem.mapToDomainModel() = Post(
+    id = this.id,
+    body = this.body,
+    title = this.title,
+    userId = this.userId
+)
+
 
 fun UserItem.mapToDomainModel(): User {
     return User(

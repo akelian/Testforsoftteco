@@ -2,6 +2,7 @@ package by.softteco.nmisko.data.remote.api
 
 import by.softteco.nmisko.data.remote.PostResponse
 import by.softteco.nmisko.data.remote.UserResponse
+import by.softteco.nmisko.data.remote.model.post.PostItem
 import by.softteco.nmisko.data.remote.model.user.UserItem
 import retrofit2.Response
 import retrofit2.http.GET
@@ -17,4 +18,5 @@ interface RemoteApi {
 
     @GET("/posts")
     suspend fun getPostList(): Response<PostResponse>
+//    suspend fun getPostList(): Response<PostItem>
 }
