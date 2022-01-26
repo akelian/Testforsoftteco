@@ -54,13 +54,15 @@
             />
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/postsTabLayout"
-            android:layout_width="match_parent"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_gravity="bottom|center"
             app:tabMode="scrollable"
+            android:nestedScrollingEnabled="false"
             app:tabBackground="@drawable/tab_selector"
-            app:tabGravity="start"
-            app:tabIndicatorHeight="0dp"/>
+            app:tabIndicatorHeight="0dp"
+            app:tabMaxWidth="24dp"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

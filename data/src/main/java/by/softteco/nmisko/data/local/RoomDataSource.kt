@@ -14,5 +14,8 @@ class RoomDataSource(private val postDAO: PostDAO, private val userDAO: UserDAO)
         userDAO.insertUser(user)
     }
 
+    override suspend fun getUserById(id: Int): UserLocal = userDAO.getUserById(id)
+
+
 
 }

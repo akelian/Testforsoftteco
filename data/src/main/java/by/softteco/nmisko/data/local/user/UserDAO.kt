@@ -14,7 +14,7 @@ interface UserDAO {
 
     @Query("SELECT * FROM user_table")
     suspend fun getAllUsers() : List<UserLocal>
-    @Query("SELECT * FROM user_table")
-    suspend fun getUserById() : List<UserLocal>
+    @Query("SELECT * FROM user_table where id = :id")
+    suspend fun getUserById(id : Int) : UserLocal
 
 }

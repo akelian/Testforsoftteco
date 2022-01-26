@@ -20,6 +20,8 @@ data class UserLocal(
     val username: String,
     @ColumnInfo(name = "website")
     val website: String,
+    @ColumnInfo(name = "street")
+    val street : String,
     @ColumnInfo(name = "geoLat")
     val geoLat: String,
     @ColumnInfo(name = "geoLng")

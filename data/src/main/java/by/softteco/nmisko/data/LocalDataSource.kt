@@ -7,4 +7,5 @@ import by.softteco.nmisko.data.local.user.UserLocal
 interface LocalDataSource {
     suspend fun getPostList() : List<PostLocal>
     suspend fun insertUser(user: UserLocal)
+    suspend fun getUserById(id : Int) : UserLocal
 }

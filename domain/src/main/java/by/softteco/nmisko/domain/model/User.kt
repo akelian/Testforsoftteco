@@ -9,5 +9,5 @@ data class User(
     val phone: String,
     val username: String,
     val website: String,
-    val geo: Geo
+    val address: Address
 )

@@ -21,6 +21,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -36,20 +37,20 @@ class MainActivity : AppCompatActivity() {
 
      private val mainViewModel: MainViewModel by viewModels{viewModelFactory}
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        Timber.e("setupUI Activity")
         appComponent = (applicationContext as App).getComponent()
         appComponent.inject(this)
-        CoroutineScope(Dispatchers.IO).launch{
-            mainViewModel.fetchPosts()
-        }
+        appComponent.inject(mainViewModel)
+
         super.onCreate(savedInstanceState)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         AppCenter.start(application, "62b9c125-63b2-4e03-8451-94bbf5cdf9a7",
             Analytics::class.java, Crashes::class.java)
-
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment

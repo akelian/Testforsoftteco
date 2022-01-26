@@ -16,6 +16,6 @@ data class UserItem(
     val username: String,
     @SerializedName("website")
     val website: String,
-    @SerializedName("geo")
-    val geo: GeoItem
+    @SerializedName("address")
+    val address: AddressItem
 )

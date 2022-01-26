@@ -5,6 +5,7 @@ import by.softteco.nmisko.data.local.user.UserLocal
 import by.softteco.nmisko.data.remote.PostResponse
 import by.softteco.nmisko.data.remote.model.post.PostItem
 import by.softteco.nmisko.data.remote.model.user.UserItem
+import by.softteco.nmisko.domain.model.Address
 import by.softteco.nmisko.domain.model.Geo
 import by.softteco.nmisko.domain.model.Post
 import by.softteco.nmisko.domain.model.User
@@ -40,7 +41,7 @@ fun UserItem.mapToDomainModel(): User {
         phone = phone,
         username = username,
         website = website,
-        geo = Geo(geo.lat, geo.lng)
+        address = Address(this.address.street, Geo(this.address.geo.lat, this.address.geo.lng))
     )
 }
 
@@ -52,7 +53,8 @@ fun User.mapToRoomModel(): UserLocal {
         phone = this.name,
         username = this.username,
         website = this.website,
-        geoLat = this.geo.lat,
-        geoLng = this.geo.lng
+        street = this.address.street,
+        geoLat = this.address.geo.lat,
+        geoLng = this.address.geo.lng
     )
 }
