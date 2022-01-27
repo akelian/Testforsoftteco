@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.microsoft.appcenter:appcenter-crashes:4.4.2@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f8fcd7e2b688586c648c79a604de1593/transformed/jetified-appcenter-crashes-4.4.2/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f8fcd7e2b688586c648c79a604de1593/transformed/jetified-appcenter-crashes-4.4.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f8fcd7e2b688586c648c79a604de1593/transformed/jetified-appcenter-crashes-4.4.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f8fcd7e2b688586c648c79a604de1593/transformed/jetified-appcenter-crashes-4.4.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-crashes/4.4.2/c9b6d8bebf7024c499b5ca9f73d41f11647b23d6/appcenter-crashes-4.4.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microsoft.appcenter/appcenter-crashes/4.4.2/2d2c73e45111b783a44d7963c32f74e9451df02a/appcenter-crashes-4.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
