@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        AppCenter.start(application, "62b9c125-63b2-4e03-8451-94bbf5cdf9a7",
+        AppCenter.start(application, "cb0e6574-15c8-4c2a-a052-4e9ecf958818",
             Analytics::class.java, Crashes::class.java)
 
         val navHostFragment =
