@@ -17,11 +17,11 @@ class UserRepositoryImpl @Inject constructor(
 ) : UserRepository {
 
 
-    override suspend fun getUserByID(id: Int): User {
+    override suspend fun getUserByID(id: Int): User? {
         val response: Response<UserItem> = remoteDataSource.getUsersById(id)
-        val user: User
+        val user: User?
         val userItem: UserItem? = response.body()
-        user = userItem!!.mapToDomainModel()
+        user = userItem?.mapToDomainModel()
         return user
     }
 

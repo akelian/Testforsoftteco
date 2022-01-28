@@ -10,8 +10,8 @@ import by.softteco.nmisko.domain.model.Geo
 import by.softteco.nmisko.domain.model.Post
 import by.softteco.nmisko.domain.model.User
 
-fun PostResponse.mapToDomainModel(): ArrayList<Post> {
-    val newPostList = ArrayList<Post>()
+fun PostResponse.mapToDomainModel(): ArrayList<Post?> {
+    val newPostList = ArrayList<Post?>()
     for (post in this) {
         newPostList.add(
             Post(
@@ -33,17 +33,23 @@ fun PostItem.mapToDomainModel() = Post(
 )
 
 
-fun UserItem.mapToDomainModel(): User {
-    return User(
-        email = email,
-        id = id,
-        name = name,
-        phone = phone,
-        username = username,
-        website = website,
-        address = Address(this.address.street, Geo(this.address.geo.lat, this.address.geo.lng))
-    )
+fun UserItem.mapToDomainModel(): User? {
+
+        return User(
+            email = email,
+            id = id,
+            name = name,
+            phone = phone,
+            username = username,
+            website = website,
+            address = Address(this.address.street, Geo(this.address.geo.lat, this.address.geo.lng))
+        )
+
 }
+
+
+
+
 
 fun User.mapToRoomModel(): UserLocal {
     return UserLocal(
