@@ -32,8 +32,14 @@ class MenuFragment : Fragment(), View.OnClickListener {
     private var posts = ArrayList<Post>()
 
     override fun onAttach(context: Context) {
-        super.onAttach(context)
         (activity as MainActivity).appComponent.inject(this)
+        super.onAttach(context)
+
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
     }
 
@@ -42,17 +48,25 @@ class MenuFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
+
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Timber.e(savedInstanceState?.isEmpty.toString())
+
 
         CoroutineScope(Dispatchers.Main).launch {
-            CoroutineScope(Dispatchers.IO).launch {
-                mainViewModel.fetchPosts()
-            }.join()
+            if (savedInstanceState == null) {
+                CoroutineScope(Dispatchers.IO).launch {
+
+                    mainViewModel.fetchPosts()
+                }.join()
+            }
+
             posts = mainViewModel.getPosts()
             withContext(Dispatchers.Main) {
                 Timber.e("setupUI MENU")

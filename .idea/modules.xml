@@ -4,8 +4,16 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Test_for_softteco.iml" filepath="$PROJECT_DIR$/.idea/modules/Test_for_softteco.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Test_for_softteco.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Test_for_softteco.data.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Test_for_softteco.domain.test.iml" />
     </modules>
   </component>
 </project>

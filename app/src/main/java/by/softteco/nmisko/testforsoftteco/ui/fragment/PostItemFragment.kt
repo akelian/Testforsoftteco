@@ -2,7 +2,6 @@ package by.softteco.nmisko.testforsoftteco.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ import by.softteco.nmisko.testforsoftteco.ui.activity.MainActivity
 import by.softteco.nmisko.testforsoftteco.ui.adapter.MyItemRecyclerViewAdapter
 import by.softteco.nmisko.testforsoftteco.ui.adapter.OnPostItemClickListener
 import by.softteco.nmisko.testforsoftteco.ui.viewmodel.MainViewModel
-import timber.log.Timber
 
 /**
  * A fragment representing a list of Items.
@@ -75,8 +73,8 @@ class PostItemFragment : Fragment(), OnPostItemClickListener {
                 if (postList.indexOf(post) in position until position + 6) {
                     filteredPostList.add(post)
                 }
-            }else if(listRest != 0 && position == postList.lastIndex - listRest ){
-                if (postList.indexOf(post) in position * 6 .. position * 6 + listRest) {
+            } else if (listRest != 0 && position == postList.lastIndex - listRest) {
+                if (postList.indexOf(post) in position * 6..position * 6 + listRest) {
                     filteredPostList.add(post)
                 }
             } else {

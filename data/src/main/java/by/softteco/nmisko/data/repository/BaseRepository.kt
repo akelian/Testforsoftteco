@@ -20,7 +20,6 @@ open class BaseRepository {
             }
         }
 
-
         return data
 
     }

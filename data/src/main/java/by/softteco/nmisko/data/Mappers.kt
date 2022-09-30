@@ -10,8 +10,8 @@ import by.softteco.nmisko.domain.model.Geo
 import by.softteco.nmisko.domain.model.Post
 import by.softteco.nmisko.domain.model.User
 
-fun PostResponse.mapToDomainModel(): ArrayList<Post?> {
-    val newPostList = ArrayList<Post?>()
+fun PostResponse.mapToDomainModel(): ArrayList<Post> {
+    val newPostList = ArrayList<Post>()
     for (post in this) {
         newPostList.add(
             Post(
@@ -33,7 +33,7 @@ fun PostItem.mapToDomainModel() = Post(
 )
 
 
-fun UserItem.mapToDomainModel(): User? {
+fun UserItem.mapToDomainModel(): User {
 
         return User(
             email = email,

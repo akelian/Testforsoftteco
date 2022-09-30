@@ -14,20 +14,25 @@ import timber.log.Timber
 import javax.inject.Inject
 
 
-class MainViewModel @Inject constructor(private var getPostsUseCase: GetPostsUseCase, private var getUserByIdUseCase: GetUserByIdUseCase, private var saveUserInDBUseCase: SaveUserInDBUseCase, var localDataSource: LocalDataSource) : ViewModel() {
+class MainViewModel @Inject constructor(
+    private var getPostsUseCase: GetPostsUseCase,
+    private var getUserByIdUseCase: GetUserByIdUseCase,
+    private var saveUserInDBUseCase: SaveUserInDBUseCase,
+    var localDataSource: LocalDataSource
+) : ViewModel() {
 
     private var postsList = ArrayList<Post>()
     private lateinit var user: User
 
-     suspend fun fetchPosts() {
-         withContext(viewModelScope.coroutineContext) {
-             postsList = getPostsUseCase()
-         }.also { Timber.e("Done") }
+    suspend fun fetchPosts() {
+        withContext(viewModelScope.coroutineContext) {
+            postsList = getPostsUseCase() as ArrayList<Post>
+        }.also { Timber.e("Done") }
     }
 
-    suspend fun fetchUserById(id :Int){
-        withContext(viewModelScope.coroutineContext){
-           user = getUserByIdUseCase(id)
+    suspend fun fetchUserById(id: Int) {
+        withContext(viewModelScope.coroutineContext) {
+            user = getUserByIdUseCase(id) as User
         }
     }
 
@@ -39,17 +44,18 @@ class MainViewModel @Inject constructor(private var getPostsUseCase: GetPostsUse
         return user
     }
 
-    suspend fun insertUserInDb(user: User){
-        withContext(viewModelScope.coroutineContext){
+    suspend fun insertUserInDb(user: User) {
+        withContext(viewModelScope.coroutineContext) {
             saveUserInDBUseCase(user)
         }
     }
 
-    suspend fun getUserByIdFromRoom(id: Int) : UserLocal{
-        val user : UserLocal
-        withContext(viewModelScope.coroutineContext){
-            user =   localDataSource.getUserById(id)
+    suspend fun getUserByIdFromRoom(id: Int): UserLocal {
+        val user: UserLocal
+        withContext(viewModelScope.coroutineContext) {
+            user = localDataSource.getUserById(id)
         }
         return user
     }
+
 }
